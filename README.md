@@ -1,5 +1,5 @@
 ## ■サービス概要
-BORAD APP
+BOARD APP
 
 ## ■概要
 基礎編のようなBOARD APPをphp/Laravelで作成する。

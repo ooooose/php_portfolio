@@ -9,13 +9,13 @@ BORAD APP
  - ログイン・ログアウト機能
  - BOARDのCRUD機能
  - TODOの検索機能
- - コメント機能、いいね機能　など
+ - コメント機能、お気に入り機能　など
 
 ## ■画面遷移図
-（作成中）
+[![Image from Gyazo](https://i.gyazo.com/91a58f944b7266916da4734e44b2b305.png)](https://gyazo.com/91a58f944b7266916da4734e44b2b305)
 
 ## ■ER図
-（作成中）
+[![Image from Gyazo](https://i.gyazo.com/92947a24a53c7061a24c059d939f9fae.png)](https://gyazo.com/92947a24a53c7061a24c059d939f9fae)
 
 ## ■スケジュール
 

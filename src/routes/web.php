@@ -21,6 +21,7 @@ Route::prefix('boards')->middleware(['auth'])
     ->name('boards.')
     ->group(function(){
         Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
     });
 
 Route::get('/', function () {

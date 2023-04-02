@@ -10,66 +10,47 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <section class="text-gray-600 body-font relative">
-                        <div class="container px-5 py-24 mx-auto">
-                            <div class="flex flex-col text-center w-full mb-12">
-                            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-                            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
-                            </div>
-                            <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                            <div class="flex flex-wrap -m-2">
-                                <div class="p-2 w-1/2">
-                                <div class="relative">
-                                    <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                                    <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <form method='post' action="{{ route('boards.store') }}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="container px-5 mx-auto">
+                                <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="p-2 w-full">
+                                    <div class="relative">
+                                        <label for="title" class="leading-7 text-sm text-gray-600">タイトル</label>
+                                        <input type="text" id="title" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    </div>
+                                    </div>
+                                    <div class="p-2 w-full">
+                                        <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">サムネイル</label>
+                                        <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                                            <div class="text-center">
+                                            <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                                                <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                                <span>画像をアップロード</span>
+                                                <input id="file-upload" name="img_path" type="file" class="sr-only">
+                                                </label>
+                                            </div> 
+                                            <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-full">
+                                    <div class="relative">
+                                        <label for="body" class="leading-7 text-sm text-gray-600">内容</label> 
+                                        <textarea id="body" name="body" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                                    </div>
+                                    </div>
+                                    <div class="p-2 w-full">
+                                    <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規作成</button>
+                                    </div>
                                 </div>
-                                </div>
-                                <div class="p-2 w-1/2">
-                                <div class="relative">
-                                    <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                                    <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                </div>
-                                </div>
-                                <div class="p-2 w-full">
-                                <div class="relative">
-                                    <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                                    <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-                                </div>
-                                </div>
-                                <div class="p-2 w-full">
-                                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-                                </div>
-                                <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                                <a class="text-indigo-500">example@email.com</a>
-                                <p class="leading-normal my-5">49 Smith St.
-                                    <br>Saint Cloud, MN 56301
-                                </p>
-                                <span class="inline-flex">
-                                    <a class="text-gray-500">
-                                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                                    </svg>
-                                    </a>
-                                    <a class="ml-4 text-gray-500">
-                                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                                    </svg>
-                                    </a>
-                                    <a class="ml-4 text-gray-500">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                                    </svg>
-                                    </a>
-                                    <a class="ml-4 text-gray-500">
-                                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                                    </svg>
-                                    </a>
-                                </span>
                                 </div>
                             </div>
-                            </div>
-                        </div>
+                        </form>
                     </section>
                 </div>
             </div>

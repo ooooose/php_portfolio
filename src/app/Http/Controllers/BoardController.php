@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Board;
 
 class BoardController extends Controller
 {
@@ -34,7 +35,15 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $img = $request->file('img_path')->store('img','public');
+
+        Board::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'img_path' => $img,
+        ]); 
+
+        return redirect()->route('boards.index');
     }
 
     /**

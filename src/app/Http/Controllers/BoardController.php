@@ -14,7 +14,8 @@ class BoardController extends Controller
      */
     public function index()
     {
-       return view('boards.index'); 
+        $boards = Board::select('id', 'title', 'img_path', 'body')->get();
+        return view('boards.index', compact('boards')); 
     }
 
     /**

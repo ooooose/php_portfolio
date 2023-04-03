@@ -82,7 +82,15 @@ class BoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $img = $request->file('img_path')->store('img','public');
+
+        $board = Board::find($id);
+        $board->title = $request->title;
+        $board->body = $request->body;
+        $board->img_path = $img;
+        $board->save();
+
+        return redirect()->route('boards.index');
     }
 
     /**

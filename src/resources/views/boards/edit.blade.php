@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <section class="text-gray-600 body-font relative">
-                        <form method='post' action="{{ route('boards.store') }}" enctype="multipart/form-data">
+                        <form method='post' action="{{ route('boards.update', [ 'id' => $board->id ]) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="container px-5 mx-auto">
                                 <div class="lg:w-1/2 md:w-2/3 mx-auto">
@@ -45,7 +45,7 @@
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">
-                                    <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規作成</button>
+                                    <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">更新する</button>
                                     </div>
                                 </div>
                                 </div>

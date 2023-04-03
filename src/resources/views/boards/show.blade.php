@@ -23,7 +23,10 @@
                                 <form method='get' action="{{ route('boards.edit', [ 'id' => $board->id ]) }}">
                                     <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">編集</button>
                                 </form>
-                                <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">削除</button>
+                                <form method="post" action="{{ route('boards.destroy', [ 'id' => $board->id ]) }}" id="delete_{{ $board->id }}">
+                                @csrf
+                                    <a href="#" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" data-id="{{ $board->id }}" onclick="deletePost(this)" >削除</a>
+                                </form>
                             </div>
                             </div>
                         </div>
@@ -32,4 +35,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function deletePost(e){
+            'use strict'
+            if(confirm('本当に削除していいですか？')){
+                document.getElementById('delete_' + e.dataset.id).submit() 
+            } 
+        }
+    </script> 
 </x-app-layout>

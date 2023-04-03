@@ -55,7 +55,9 @@ class BoardController extends Controller
      */
     public function show($id)
     {
-        //
+        $board = Board::find($id); 
+
+        return view('boards.show', compact('board'));
     }
 
     /**
@@ -66,7 +68,9 @@ class BoardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $board = Board::find($id);
+
+        return view('boards.edit', compact('board'));
     }
 
     /**
@@ -78,7 +82,15 @@ class BoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $img = $request->file('img_path')->store('img','public');
+
+        $board = Board::find($id);
+        $board->title = $request->title;
+        $board->body = $request->body;
+        $board->img_path = $img;
+        $board->save();
+
+        return redirect()->route('boards.index');
     }
 
     /**
@@ -89,6 +101,9 @@ class BoardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $board = Board::find($id);
+        $board->delete();
+
+        return redirect()->route('boards.index');
     }
 }

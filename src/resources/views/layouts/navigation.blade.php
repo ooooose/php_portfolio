@@ -15,10 +15,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('boards.index')" :active="request()->routeIs('board')">
+                    <x-nav-link :href="route('boards.index')" :active="request()->routeIs('boards.index')">
                         {{ __('Boards') }}
                     </x-nav-link>
                 </div>

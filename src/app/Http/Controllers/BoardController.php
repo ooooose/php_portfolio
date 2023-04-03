@@ -55,7 +55,9 @@ class BoardController extends Controller
      */
     public function show($id)
     {
-        //
+        $board = Board::find($id); 
+
+        return view('boards.show', compact('board'));
     }
 
     /**

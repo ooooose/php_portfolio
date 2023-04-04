@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Board;
+use App\Http\Requests\StoreBoardRequest;
 
 class BoardController extends Controller
 {
@@ -34,7 +35,7 @@ class BoardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBoardRequest $request)
     {
         $img = $request->file('img_path')->store('img','public');
 

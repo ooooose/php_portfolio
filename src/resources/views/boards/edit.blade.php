@@ -24,7 +24,7 @@
                                     <div class="p-2 w-full">
                                     <div class="relative">
                                         <label for="url" class="leading-7 text-sm text-gray-600">サービスURL</label>
-                                        <input type="text" id="title" value="{{ $board->title }}" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                        <input type="text" id="title" value="{{ $board->url }}" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">
@@ -47,7 +47,7 @@
                                     <div class="p-2 w-full">
                                     <div class="relative">
                                         <label for="description" class="leading-7 text-sm text-gray-600">概要</label> 
-                                        <textarea id="description" name="description" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ $board->body }}</textarea>
+                                        <textarea id="description" name="description" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ $board->description }}</textarea>
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">

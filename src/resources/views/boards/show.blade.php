@@ -18,6 +18,7 @@
                             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
                                 {{ $board->title }}
                             </h1>
+                            <p class="leading-relaxed">{{ $board->user->name }}さん</p>
                             <a class="text-indigo-500 inline-flex items-center" href="{{ $board->url }}">{{ $board->url }}</a> 
                             <p class="mb-8 leading-relaxed">{{ $board->description }}</p>
                             <div class="flex justify-center">

@@ -13,11 +13,26 @@ class Board extends Model
 
     protected $fillable = [
         'title',
-        'body',
+        'url',
+        'description',
         'img_path', 
+        'user_id', 
     ];
 
-    public function user() {
+    public function scopeSearch($query, $search)
+    {
+        if ($search !== null) {
+            $search_split = mb_convert_kana($search, 's');
+            $search_split_2 = preg_split('/[\s]+/', $search_split);
+            foreach ($search_split_2 as $value) {
+                $query->where('title', 'like', '%' .$value. '%'); 
+            }
+            return $query;
+        }
+    }
+
+    public function user() 
+    {
         return $this->belongsTo(User::class); 
     }
 

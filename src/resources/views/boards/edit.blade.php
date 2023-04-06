@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            掲示板編集画面 
+            作品登録情報編集 
         </h2>
     </x-slot>
 
@@ -17,8 +17,14 @@
                                 <div class="flex flex-wrap -m-2">
                                     <div class="p-2 w-full">
                                     <div class="relative">
-                                        <label for="title" class="leading-7 text-sm text-gray-600">タイトル</label>
+                                        <label for="title" class="leading-7 text-sm text-gray-600">サービス名</label>
                                         <input type="text" id="title" value="{{ $board->title }}" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    </div>
+                                    </div>
+                                    <div class="p-2 w-full">
+                                    <div class="relative">
+                                        <label for="url" class="leading-7 text-sm text-gray-600">サービスURL</label>
+                                        <input type="text" id="title" value="{{ $board->url }}" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">
@@ -40,8 +46,8 @@
                                     </div>
                                     <div class="p-2 w-full">
                                     <div class="relative">
-                                        <label for="body" class="leading-7 text-sm text-gray-600">内容</label> 
-                                        <textarea id="body" name="body" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ $board->body }}</textarea>
+                                        <label for="description" class="leading-7 text-sm text-gray-600">概要</label> 
+                                        <textarea id="description" name="description" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ $board->description }}</textarea>
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">

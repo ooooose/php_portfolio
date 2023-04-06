@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Board;
+use App\Models\User;
+use App\Http\Requests\StoreBoardRequest;
 
 class BoardController extends Controller
 {
@@ -12,9 +14,12 @@ class BoardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $boards = Board::select('id', 'title', 'img_path', 'body')->get();
+        $search = $request->search;
+        $query = Board::search($search);
+
+        $boards = $query -> select('id', 'title', 'url', 'img_path', 'user_id')->get();
         return view('boards.index', compact('boards')); 
     }
 
@@ -34,13 +39,14 @@ class BoardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBoardRequest $request)
     {
         $img = $request->file('img_path')->store('img','public');
 
         Board::create([
             'title' => $request->title,
-            'body' => $request->body,
+            'url' => $request->url,
+            'description' => $request->description,
             'img_path' => $img,
         ]); 
 
@@ -86,7 +92,8 @@ class BoardController extends Controller
 
         $board = Board::find($id);
         $board->title = $request->title;
-        $board->body = $request->body;
+        $baord->url = $request->url;
+        $board->description = $request->description;
         $board->img_path = $img;
         $board->save();
 

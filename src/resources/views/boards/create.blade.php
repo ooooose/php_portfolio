@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            掲示板新規作成 
+            作品新規登録 
         </h2>
     </x-slot>
 
@@ -9,6 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <section class="text-gray-600 body-font relative">
                         <form method='post' action="{{ route('boards.store') }}" enctype="multipart/form-data">
                             @csrf
@@ -17,8 +18,14 @@
                                 <div class="flex flex-wrap -m-2">
                                     <div class="p-2 w-full">
                                     <div class="relative">
-                                        <label for="title" class="leading-7 text-sm text-gray-600">タイトル</label>
-                                        <input type="text" id="title" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                        <label for="title" class="leading-7 text-sm text-gray-600">サービス名</label>
+                                        <input type="text" id="title" name="title" value="{{ old('title') }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    </div>
+                                    </div>
+                                    <div class="p-2 w-full">
+                                    <div class="relative">
+                                        <label for="url" class="leading-7 text-sm text-gray-600">サービスURL</label>
+                                        <input type="text" id="url" name="url" value="{{ old('url') }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">
@@ -40,8 +47,8 @@
                                     </div>
                                     <div class="p-2 w-full">
                                     <div class="relative">
-                                        <label for="body" class="leading-7 text-sm text-gray-600">内容</label> 
-                                        <textarea id="body" name="body" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                                        <label for="description" class="leading-7 text-sm text-gray-600">概要</label> 
+                                        <textarea id="description" name="description" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ old('description') }}</textarea>
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">

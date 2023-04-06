@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Board;
+use App\Models\User;
 use App\Http\Requests\StoreBoardRequest;
 
 class BoardController extends Controller
@@ -13,9 +14,12 @@ class BoardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $boards = Board::select('id', 'title', 'url', 'img_path')->get();
+        $search = $request->search;
+        $query = Board::search($search);
+
+        $boards = $query -> select('id', 'title', 'url', 'img_path', 'user_id')->get();
         return view('boards.index', compact('boards')); 
     }
 

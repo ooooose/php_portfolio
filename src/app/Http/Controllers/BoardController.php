@@ -19,7 +19,8 @@ class BoardController extends Controller
         $search = $request->search;
         $query = Board::search($search);
 
-        $boards = $query -> select('id', 'title', 'url', 'img_path', 'user_id')->get();
+        $boards = $query->select('id', 'title', 'url', 'img_path', 'user_id')->paginate(6);
+
         return view('boards.index', compact('boards')); 
     }
 

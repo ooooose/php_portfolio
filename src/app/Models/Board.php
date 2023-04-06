@@ -25,8 +25,9 @@ class Board extends Model
             $search_split = mb_convert_kana($search, 's');
             $search_split_2 = preg_split('/[\s]+/', $search_split);
             foreach ($search_split_2 as $value) {
-                $query->where('title', 'like', '%' .$value. '%'); 
+                $query->where('title', 'like', '%'.$value.'%'); 
             }
+
             return $query;
         }
     }

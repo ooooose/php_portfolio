@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('boards.index')" :active="request()->routeIs('boards.index')">
-                        {{ __('Boards') }}
+                        作品一覧
                     </x-nav-link>
                 </div>
             </div>

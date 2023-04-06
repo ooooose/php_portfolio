@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            掲示板詳細画面 
+            作品詳細画面 
         </h2>
     </x-slot>
 
@@ -18,7 +18,8 @@
                             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
                                 {{ $board->title }}
                             </h1>
-                            <p class="mb-8 leading-relaxed">{{ $board->body }}</p>
+                            <a class="text-indigo-500 inline-flex items-center" href="{{ $board->url }}">{{ $board->url }}</a> 
+                            <p class="mb-8 leading-relaxed">{{ $board->description }}</p>
                             <div class="flex justify-center">
                                 <form method='get' action="{{ route('boards.edit', [ 'id' => $board->id ]) }}">
                                     <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">編集</button>

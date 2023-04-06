@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            掲示板新規作成 
+            作品新規登録 
         </h2>
     </x-slot>
 

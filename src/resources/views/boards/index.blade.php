@@ -45,6 +45,7 @@
                             </div>
                         @endforeach
                         </div>
+                        {{ $boards->links() }}
                    </div>
                 </div>
             </div>

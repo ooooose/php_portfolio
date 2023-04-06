@@ -1,27 +1,29 @@
 ## ■サービス概要
-BOARD APP
+WorksHub
 
 ## ■概要
-基礎編のようなBOARD APPをphp/Laravelで作成する。
+個人が作ったポートフォリオを登録するアプリ。
 
 ## ■実装予定の機能
  - ユーザー登録・削除機能
  - ログイン・ログアウト機能
- - BOARDのCRUD機能
- - TODOの検索機能
- - コメント機能、お気に入り機能　など
+ - 作品のCRUD機能
+ - 作品の検索機能
+ - お気に入り機能
 
 ## ■画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/91a58f944b7266916da4734e44b2b305.png)](https://gyazo.com/91a58f944b7266916da4734e44b2b305)
+後日添付予定
 
 ## ■ER図
-[![Image from Gyazo](https://i.gyazo.com/92947a24a53c7061a24c059d939f9fae.png)](https://gyazo.com/92947a24a53c7061a24c059d939f9fae)
+[![Image from Gyazo](https://i.gyazo.com/5466048034bf40eb5190320504d02174.png)](https://gyazo.com/5466048034bf40eb5190320504d02174)
+
+## インフラ構成図
+後日添付予定 
 
 ## ■スケジュール
-
 ```
 1. 設計（README作成・画面遷移図作成・ER図作成）: 3/30
-2. 機能実装: 3/31 - 4/5
-3. MVPリリース: 4/6〆
-4. 本リリース: 4/10〆
+2. 機能実装: 3/31 - 4/10
+3. AWSへのデプロイ: 4/10 -4/14〆
+4. リリース(完成): 4/16〆
 ```

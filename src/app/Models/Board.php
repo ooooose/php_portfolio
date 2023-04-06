@@ -13,7 +13,8 @@ class Board extends Model
 
     protected $fillable = [
         'title',
-        'body',
+        'url',
+        'description',
         'img_path', 
     ];
 

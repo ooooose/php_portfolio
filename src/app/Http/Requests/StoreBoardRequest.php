@@ -25,9 +25,9 @@ class StoreBoardRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:30'],
-            'url' => ['required', 'text'],
-            'img_path' => ['required', 'string'],
-            'description' => ['required', 'text', 'max:200'],
+            'url' => ['required', 'string'],
+            'img_path' => ['required', 'image', 'max:1024'],
+            'description' => ['required', 'string', 'max:200'],
         ];
     }
 }

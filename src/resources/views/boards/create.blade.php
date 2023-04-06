@@ -18,8 +18,14 @@
                                 <div class="flex flex-wrap -m-2">
                                     <div class="p-2 w-full">
                                     <div class="relative">
-                                        <label for="title" class="leading-7 text-sm text-gray-600">タイトル</label>
+                                        <label for="title" class="leading-7 text-sm text-gray-600">サービス名</label>
                                         <input type="text" id="title" name="title" value="{{ old('title') }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    </div>
+                                    </div>
+                                    <div class="p-2 w-full">
+                                    <div class="relative">
+                                        <label for="url" class="leading-7 text-sm text-gray-600">サービスURL</label>
+                                        <input type="text" id="url" name="url" value="{{ old('url') }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">
@@ -41,8 +47,8 @@
                                     </div>
                                     <div class="p-2 w-full">
                                     <div class="relative">
-                                        <label for="body" class="leading-7 text-sm text-gray-600">内容</label> 
-                                        <textarea id="body" name="body" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ old('body') }}</textarea>
+                                        <label for="description" class="leading-7 text-sm text-gray-600">概要</label> 
+                                        <textarea id="description" name="description" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ old('description') }}</textarea>
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">

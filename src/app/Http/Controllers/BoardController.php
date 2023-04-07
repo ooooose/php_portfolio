@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Board;
+use App\Models\Bookmark;
 use App\Models\User;
 use App\Http\Requests\StoreBoardRequest;
+use Illuminate\Support\Facades\Auth;
 
 class BoardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified'])->only(['bookmark', 'unbookmark']); 
+    }
     /**
      * Display a listing of the resource.
      *
@@ -113,5 +119,23 @@ class BoardController extends Controller
         $board->delete();
 
         return redirect()->route('boards.index');
+    }
+
+    public function bookmark($id)
+    {
+        Bookmark::create([
+            'board_id' => $id,
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function unbookmark($id)
+    {
+        $bookmark = Bookmark::where('board_id', $id)->where('user_id', Auth::id())->first();
+        $bookmark->delete();
+
+        return redirect()->back();
     }
 }

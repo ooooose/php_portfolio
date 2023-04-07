@@ -28,6 +28,8 @@ Route::prefix('boards')->middleware(['auth'])
         Route::get('/{id}/edit', 'edit')->name('edit');
         Route::post('/{id}', 'update')->name('update');
         Route::post('/{id}/destroy', 'destroy')->name('destroy');
+        Route::get('/{id}/bookmark', 'bookmark')->name('bookmark');
+        Route::get('/{id}/unbookmark', 'unbookmark')->name('unbookmark');
     });
 
 Route::prefix('users')->middleware(['auth'])

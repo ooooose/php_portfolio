@@ -40,6 +40,11 @@
                                                 </svg>
                                             </a>
                                         </div>
+                                        @if($board->is_bookmarked_by_auth_user())
+                                            <a href="{{ route('boards.unbookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">★</a>
+                                        @else
+                                            <a href="{{ route('boards.bookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">☆</a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

@@ -99,7 +99,7 @@ class BoardController extends Controller
 
         $board = Board::find($id);
         $board->title = $request->title;
-        $baord->url = $request->url;
+        $board->url = $request->url;
         $board->description = $request->description;
         $board->img_path = $img;
         $board->save();
@@ -137,5 +137,12 @@ class BoardController extends Controller
         $bookmark->delete();
 
         return redirect()->back();
+    }
+
+    public function bookmark_boards()
+    {
+        $boards = \Auth::user()->bookmark_boards()->paginate(6); 
+
+        return view('boards.bookmarks', compact('boards'));
     }
 }

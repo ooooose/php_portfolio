@@ -29,22 +29,30 @@
                                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                     <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/'.$board->img_path) }}" alt="blog">
                                     <div class="p-6">
-                                        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">No.{{ $board->id }}</h2>
-                                        <h1 class="title-font text-lg font-medium text-gray-900">{{ $board->title }} ({{ $board->user->name }}さん)</h1>
+                                        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">No.{{ $board->id }} {{ $board->user->name }}さん</h2>
+                                        <h1 class="title-font text-lg font-medium text-gray-900">
+                                            {{ $board->title }} 
+                                            <small>
+                                                <a href="{{ route('boards.show', ['id' => $board->id ]) }}" class="text-right inline-block text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">作品詳細
+                                                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M5 12h14"></path>
+                                                        <path d="M12 5l7 7-7 7"></path>
+                                                    </svg>
+                                                </a>
+                                            </small>
+                                        </h1>
                                         <a href="{{ $board->url }}" class="text-indigo-500 inline-flex items-center md:mb-3 lg:mb-0" target="_blank">{{ $board->url }}</a>
-                                        <div class="flex items-center flex-wrap mt-3 ">
-                                            <a href="{{ route('boards.show', ['id' => $board->id ]) }}" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">作品詳細
-                                                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M5 12h14"></path>
-                                                    <path d="M12 5l7 7-7 7"></path>
-                                                </svg>
-                                            </a>
+                                        <div class="float-right flex items-center flex-wrap mt-3">
+                                            @if($board->is_bookmarked_by_auth_user())
+                                                <a href="{{ route('boards.unbookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">
+                                                    <i class='fa-solid fa-star'></i>
+                                                </a>
+                                            @else
+                                                <a href="{{ route('boards.bookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">
+                                                    <i class='fa-regular fa-star'></i>
+                                                </a>
+                                            @endif
                                         </div>
-                                        @if($board->is_bookmarked_by_auth_user())
-                                            <a href="{{ route('boards.unbookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">★</a>
-                                        @else
-                                            <a href="{{ route('boards.bookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">☆</a>
-                                        @endif
                                     </div>
                                 </div>
                             </div>

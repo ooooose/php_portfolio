@@ -28,6 +28,11 @@ class User extends Authenticatable
         return $this->hasMany(Board::class); 
     }
 
+    public function bookmark_boards()
+    {
+        return $this->belongsToMany(Board::class, 'bookmarks', 'user_id', 'board_id'); 
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

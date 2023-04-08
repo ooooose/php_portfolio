@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-              {{ $user->name }}さんの作品一覧 
+              お気に入り一覧 
             </h2>
         </div>
     </x-slot>
@@ -13,12 +13,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="container mx-auto">
                         <div class="flex flex-wrap -m-4">
-                        @foreach($user->boards as $board)
+                        @foreach($boards as $board)
                             <div class="p-4 md:w-1/3">
                                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                     <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/'.$board->img_path) }}" alt="blog">
                                     <div class="p-6">
-                                        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">No.{{ $board->id }}</h2>
+                                        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">No.{{ $board->id }} {{ $board->user->name }}さん</h2>
                                         <h1 class="title-font text-lg font-medium text-gray-900">
                                             {{ $board->title }} 
                                             <small>
@@ -47,6 +47,7 @@
                             </div>
                         @endforeach
                         </div>
+                        {{ $boards->links() }}
                    </div>
                 </div>
             </div>

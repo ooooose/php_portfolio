@@ -153,6 +153,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'サービス名', 
+        'url' => 'サービスURL', 
+        'img_path' => 'サムネイル', 
+        'description' => '概要', 
+    ],
 
 ];

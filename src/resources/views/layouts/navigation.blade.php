@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('boards.index')" :active="request()->routeIs('boards.index')">
                         作品一覧
                     </x-nav-link>
+                    <x-nav-link :href="route('boards.bookmarks')" :active="request()->routeIs('boards.bookmarks')">
+                        お気に入り一覧
+                    </x-nav-link>
                 </div>
             </div>
 

@@ -138,4 +138,11 @@ class BoardController extends Controller
 
         return redirect()->back();
     }
+
+    public function bookmark_boards()
+    {
+        $boards = \Auth::user()->bookmark_boards()->paginate(6); 
+
+        return view('boards.bookmarks', compact('boards'));
+    }
 }

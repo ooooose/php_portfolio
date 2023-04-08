@@ -9,6 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    <div class='text-center'>
+                        <x-auth-validation-errors class='mb-4' :errors='$errors' />
+                    </div>
                     <section class="text-gray-600 body-font relative">
                         <form method='post' action="{{ route('boards.update', [ 'id' => $board->id ]) }}" enctype="multipart/form-data">
                             @csrf
@@ -24,7 +27,7 @@
                                     <div class="p-2 w-full">
                                     <div class="relative">
                                         <label for="url" class="leading-7 text-sm text-gray-600">サービスURL</label>
-                                        <input type="text" id="title" value="{{ $board->url }}" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                        <input type="text" id="url" value="{{ $board->url }}" name="url" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
                                     </div>
                                     <div class="p-2 w-full">
@@ -34,8 +37,8 @@
                                             <img src="{{ asset('storage/'. $board->img_path) }}" id='preview'>
                                             <div class="mt-4 flex text-sm leading-6 text-gray-600">
                                                 <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                                                <span>画像をアップロード</span>
-                                                <input id="file-upload" name="img_path" value="{{ $board->img_path }}" type="file" class="sr-only" onchange="previewImage(this)">
+                                                    <span>画像をアップロード</span>
+                                                    <input id="file-upload" name="img_path" type="file" class="sr-only" onchange="previewImage(this)">
                                                 </label>
                                             </div> 
                                             <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>

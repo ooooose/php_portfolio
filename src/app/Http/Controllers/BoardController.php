@@ -99,7 +99,7 @@ class BoardController extends Controller
 
         $board = Board::find($id);
         $board->title = $request->title;
-        $baord->url = $request->url;
+        $board->url = $request->url;
         $board->description = $request->description;
         $board->img_path = $img;
         $board->save();

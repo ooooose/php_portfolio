@@ -25,7 +25,7 @@
                 </div>
                 <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
                   <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">多くの作品に触れ、
-                    <br class="hidden lg:inline-block">新たな創造へ！
+                    <br />新たな創造へ！
                   </h1>
                   <p class="mb-8 leading-relaxed">本サービスはポートフォリオとして作成したwebアプリケーションを一元的に管理するアプリです。ご自身で作成したポートフォリオを登録するほか、他の方が作成したポートフォリオも閲覧できるようになっております。多くのアイデアに触れることで新たな創造へのヒントにしましょう！</p>
                   <div class="flex justify-center">

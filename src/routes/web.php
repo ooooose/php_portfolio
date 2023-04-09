@@ -42,7 +42,7 @@ Route::prefix('users')->middleware(['auth'])
     });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
 Route::get('/dashboard', function () {

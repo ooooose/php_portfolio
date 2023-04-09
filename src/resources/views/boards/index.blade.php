@@ -1,15 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class='flex'>
-            <div>
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                  作品一覧 
-                </h2>
-                <button class="mt-2 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                  <a href="{{ route('boards.create') }}" class="text-white-500">新規作成</a>
-                </button>
-            </div>
-            <form class='flex lg:w-2/3 w-3/5 sm:flex-row sm:item-center items-start mx-auto' method='get' action="{{ route('boards.index') }}">
+        <div class='md:flex flex-row'>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                作品一覧 
+            </h2>
+            <form class='mt-2 flex lg:w-2/3 md:w-full sm:flex-row sm:item-center items-start mx-auto' method='get' action="{{ route('boards.index') }}">
                 <div class="relative flex-grow">
                     <input type="text" name="search" placeholder='作品名で検索' class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
@@ -21,6 +16,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <button class="mt-4 ml-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                    <a href="{{ route('boards.create') }}" class="text-white-500">新規作成</a>
+                </button>
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="container mx-auto">
                         <div class="flex flex-wrap -m-4">

@@ -19,7 +19,7 @@
                                 {{ $board->title }}
                             </h1>
                             <p class="leading-relaxed">{{ $board->user->name }}さん</p>
-                            <a class="text-indigo-500 inline-flex items-center" href="{{ $board->url }}">{{ $board->url }}</a> 
+                            <a class="text-indigo-500 inline-flex items-center" href="{{ $board->url }}" target="__blank">{{ $board->url }}</a> 
                             <p class="mb-8 leading-relaxed">{{ $board->description }}</p>
                             <div class="flex justify-center">
                                 <form method='get' action="{{ route('boards.edit', [ 'id' => $board->id ]) }}">

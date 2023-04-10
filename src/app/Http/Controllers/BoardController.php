@@ -25,7 +25,7 @@ class BoardController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $query = Board::search($search);
+        $query = Board::latest()->search($search);
 
         $boards = $query->select('id', 'title', 'url', 'img_path', 'user_id')->paginate(6);
 

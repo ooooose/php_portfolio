@@ -13,7 +13,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="container mx-auto">
                         <div class="flex flex-wrap -m-4">
-                        @foreach($user->boards as $board)
+                        @foreach($boards as $board)
                             <div class="p-4 md:w-1/3">
                                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                     <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/'.$board->img_path) }}" alt="blog">

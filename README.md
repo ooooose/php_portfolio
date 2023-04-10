@@ -18,7 +18,7 @@ WorksHub
 [![Image from Gyazo](https://i.gyazo.com/5466048034bf40eb5190320504d02174.png)](https://gyazo.com/5466048034bf40eb5190320504d02174)
 
 ## インフラ構成図
-後日添付予定 
+[![Image from Gyazo](https://i.gyazo.com/cdb60bb44388b590b623950a8c465f0e.png)](https://gyazo.com/cdb60bb44388b590b623950a8c465f0e)
 
 ## ■スケジュール
 ```

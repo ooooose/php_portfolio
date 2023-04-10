@@ -7,7 +7,9 @@ use App\Models\Board;
 use App\Models\Bookmark;
 use App\Models\User;
 use App\Http\Requests\StoreBoardRequest;
+use App\Http\Requests\UpdateBoardRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BoardController extends Controller
 {
@@ -23,7 +25,7 @@ class BoardController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $query = Board::search($search);
+        $query = Board::latest()->search($search);
 
         $boards = $query->select('id', 'title', 'url', 'img_path', 'user_id')->paginate(6);
 
@@ -83,7 +85,7 @@ class BoardController extends Controller
     {
         $board = Board::find($id);
 
-        return view('boards.edit', compact('board'));
+        return view('boards.edit', ['board' => $board]);
     }
 
     /**
@@ -93,16 +95,22 @@ class BoardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateBoardRequest $request, $id)
     {
-        $img = $request->file('img_path')->store('img','public');
+        $board = Board::find($id); 
+        $image = $request->file('img_path');
+        $path = $board->img_path;
+        if (isset($image)) {
+            Storage::delete('public/image/', $board->img_path); 
+            $path = $request->file('img_path')->store('img', 'public');
+        }
 
-        $board = Board::find($id);
-        $board->title = $request->title;
-        $board->url = $request->url;
-        $board->description = $request->description;
-        $board->img_path = $img;
-        $board->save();
+        $board->update([
+            'title' => $request->title,
+            'url' => $request->url,
+            'img_path' => $path,
+            'description' => $request->description,
+        ]);
 
         return redirect()->route('boards.index');
     }

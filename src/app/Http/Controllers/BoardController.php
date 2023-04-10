@@ -7,6 +7,7 @@ use App\Models\Board;
 use App\Models\Bookmark;
 use App\Models\User;
 use App\Http\Requests\StoreBoardRequest;
+use App\Http\Requests\UpdateBoardRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -94,7 +95,7 @@ class BoardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateBoardRequest $request, $id)
     {
         $board = Board::find($id); 
         $image = $request->file('img_path');

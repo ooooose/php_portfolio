@@ -50,7 +50,12 @@ class BoardController extends Controller
      */
     public function store(StoreBoardRequest $request)
     {
-        $img = $request->file('img_path')->store('img','public');
+        if (app()->isLocal()) {
+            $img = $request->file('img_path')->store('img','public');
+        } else {
+            $image = $request->file('image');
+            $img = Storage::disk('s3')->putFile('/', $image, 'public');
+        }
 
         Board::create([
             'title' => $request->title,
@@ -101,8 +106,13 @@ class BoardController extends Controller
         $image = $request->file('img_path');
         $path = $board->img_path;
         if (isset($image)) {
-            Storage::delete('public/image/', $board->img_path); 
-            $path = $request->file('img_path')->store('img', 'public');
+            if (app()->isLocal()) {
+                Storage::delete('public/image/', $board->img_path); 
+                $path = $request->file('img_path')->store('img', 'public');
+            } else {
+                Storage::disk('s3')->delete($image);
+                $path = Storage::disk('s3')->putFile('/', $image, 'public');    
+            }
         }
 
         $board->update([

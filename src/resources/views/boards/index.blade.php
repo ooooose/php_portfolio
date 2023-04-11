@@ -28,7 +28,7 @@
                                     @if (App::environment('local'))
                                         <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/'.$board->img_path) }}" alt="blog">
                                     @else
-                                        <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://workshub.s3.ap-northeast-1.amazonaws.com/{{ $board->img_path }}" alt="blog">
+                                        <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ $board->img_path }}" alt="blog">
                                     @endif
                                     <div class="p-6">
                                         <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{{ $board->user->name }}さん</h2>

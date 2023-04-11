@@ -54,7 +54,7 @@ class BoardController extends Controller
             $img = $request->file('img_path')->store('img','public');
         } else {
             $image = $request->file('img_path');
-            $img = Storage::disk('s3')->putFile('/', $image, 'public');
+            $img = Storage::disk('s3')->putFile('/', $image, 'public'); 
         }
 
         Board::create([

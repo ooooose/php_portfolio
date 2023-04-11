@@ -53,7 +53,7 @@ class BoardController extends Controller
         if (app()->isLocal()) {
             $img = $request->file('img_path')->store('img','public');
         } else {
-            $image = $request->file('image');
+            $image = $request->file('img_path');
             $img = Storage::disk('s3')->putFile('/', $image, 'public');
         }
 

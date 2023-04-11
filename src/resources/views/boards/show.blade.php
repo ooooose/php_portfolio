@@ -12,7 +12,11 @@
                     <section class="text-gray-600 body-font">
                         <div class="container mx-auto flex px-5 md:flex-row flex-col items-center">
                             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                            <img class="object-cover object-center rounded" alt="hero" src="{{ asset('storage/'.$board->img_path) }}">
+                            @if (App::environment('local'))
+                                <img class="object-cover object-center rounded" alt="hero" src="{{ asset('storage/'.$board->img_path) }}">
+                            @else
+                                <img class="object-cover object-center rounded" alt="hero" src="https://workshub.s3.ap-northeast-1.amazonaws.com/{{ $board->img_path }}">
+                            @endif
                             </div>
                             <div class="lg:flex-grow md:w-1/2 md:pl-16 flex flex-col md:items-start md:text-left text-center">
                             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">

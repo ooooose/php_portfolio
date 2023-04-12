@@ -25,15 +25,17 @@
                             <p class="leading-relaxed">{{ $board->user->name }}さん</p>
                             <a class="text-indigo-500 inline-flex items-center" href="{{ $board->url }}" target="__blank">{{ $board->url }}</a> 
                             <p class="mb-8 leading-relaxed">{{ $board->description }}</p>
-                            <div class="flex justify-center">
-                                <form method='get' action="{{ route('boards.edit', [ 'id' => $board->id ]) }}">
-                                    <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">編集</button>
-                                </form>
-                                <form method="post" action="{{ route('boards.destroy', [ 'id' => $board->id ]) }}" id="delete_{{ $board->id }}">
-                                @csrf
-                                    <a href="#" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" data-id="{{ $board->id }}" onclick="deletePost(this)" >削除</a>
-                                </form>
-                            </div>
+                            @if (Auth::user()->id == $board->user->id )
+                                <div class="flex justify-center">
+                                    <form method='get' action="{{ route('boards.edit', [ 'id' => $board->id ]) }}">
+                                        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">編集</button>
+                                    </form>
+                                    <form method="post" action="{{ route('boards.destroy', [ 'id' => $board->id ]) }}" id="delete_{{ $board->id }}">
+                                    @csrf
+                                        <a href="#" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" data-id="{{ $board->id }}" onclick="deletePost(this)" >削除</a>
+                                    </form>
+                                </div>
+                            @endif
                             </div>
                         </div>
                     </section>

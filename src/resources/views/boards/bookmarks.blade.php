@@ -22,7 +22,7 @@
                                         <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://workshub.s3.ap-northeast-1.amazonaws.com/{{ $board->img_path }}" alt="blog">
                                     @endif
                                     <div class="p-6">
-                                        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">No.{{ $board->id }} {{ $board->user->name }}さん</h2>
+                                        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{{ $board->user->name }}さん</h2>
                                         <h1 class="title-font text-lg font-medium text-gray-900">
                                             {{ $board->title }} 
                                             <small>

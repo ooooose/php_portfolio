@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function bookmark_boards()
     {
-        return $this->belongsToMany(Board::class, 'bookmarks', 'user_id', 'board_id'); 
+        return $this->belongsToMany(Board::class, 'bookmarks', 'user_id', 'board_id')->latest(); 
     }
 
     /**

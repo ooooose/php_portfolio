@@ -111,7 +111,7 @@ class BoardController extends Controller
                 $path = $request->file('img_path')->store('img', 'public');
             } else {
                 Storage::disk('s3')->delete($image);
-                $path = Storage::disk('s3')->putFile('/', $image, 'public');    
+                $path = Storage::disk('s3')->putFile('/', $image);    
             }
         }
 

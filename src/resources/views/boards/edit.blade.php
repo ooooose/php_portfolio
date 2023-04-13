@@ -45,7 +45,7 @@
                                                     <input id="file-upload" name="img_path" type="file" class="sr-only" onchange="previewImage(this)">
                                                 </label>
                                             </div> 
-                                            <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                                            <p class="text-xs leading-5 text-gray-600">JPG, JPEG, PNG up to 10MB</p>
                                             </div>
                                         </div>
                                     </div>

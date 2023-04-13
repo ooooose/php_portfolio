@@ -10,18 +10,6 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('boards.index')" :active="request()->routeIs('boards.index')">
-                        作品一覧
-                    </x-nav-link>
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
-                        マイページ
-                    </x-nav-link>
-                    <x-nav-link :href="route('boards.bookmarks')" :active="request()->routeIs('boards.bookmarks')">
-                        お気に入り一覧
-                    </x-nav-link>
-                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -41,6 +29,15 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
+                        <x-dropdown-link :href="route('boards.index')" >
+                            作品一覧
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('users.index')" >
+                            マイページ
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('boards.bookmarks')" >
+                            お気に入り一覧
+                        </x-dropdown-link>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 

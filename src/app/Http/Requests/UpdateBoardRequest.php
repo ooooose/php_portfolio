@@ -26,6 +26,7 @@ class UpdateBoardRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:30'],            
             'url' => ['required', 'string'],            
+            'img_path' => ['image','max:1024'],
             'description' => ['required', 'string', 'max:200'],            
         ];
     }

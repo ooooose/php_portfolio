@@ -1,12 +1,23 @@
 ## ■サービス概要
-WorksHub
+#### WorksHub
+[![Image from Gyazo](https://i.gyazo.com/bae343ca23e4e3413dea4b5b089d61b3.png)](https://gyazo.com/bae343ca23e4e3413dea4b5b089d61b3)
+#### ▼サービスURL
+https://workshub.herokuapp.com/
 
 ## ■概要
-個人が作ったポートフォリオを登録するアプリ。
+個人が作ったポートフォリオを登録・管理するアプリです。
+
+## ■使用技術
+ - PHP(8), Laravel(8)
+ - Nginx
+ - MySQL 8
+ - Docker, docker-compose
+ - S3（画像アップロード先として選択）
+ - Heroku
 
 ## ■実装予定の機能
  - ユーザー登録・削除機能
- - ログイン・ログアウト機能
+ - ログイン・ログアウト機能（認証機能）
  - 作品のCRUD機能
  - 作品の検索機能
  - お気に入り機能
@@ -16,14 +27,3 @@ WorksHub
 
 ## ■ER図
 [![Image from Gyazo](https://i.gyazo.com/5466048034bf40eb5190320504d02174.png)](https://gyazo.com/5466048034bf40eb5190320504d02174)
-
-## インフラ構成図
-[![Image from Gyazo](https://i.gyazo.com/cdb60bb44388b590b623950a8c465f0e.png)](https://gyazo.com/cdb60bb44388b590b623950a8c465f0e)
-
-## ■スケジュール
-```
-1. 設計（README作成・画面遷移図作成・ER図作成）: 3/30
-2. 機能実装: 3/31 - 4/10
-3. AWSへのデプロイ: 4/10 -4/14〆
-4. リリース(完成): 4/16〆
-```

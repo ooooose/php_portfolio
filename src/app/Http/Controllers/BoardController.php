@@ -64,7 +64,7 @@ class BoardController extends Controller
             'img_path' => $img,
         ]); 
 
-        return redirect()->route('boards.index');
+        return redirect()->route('boards.index')->with('flash_message', '投稿が完了しました');
     }
 
     /**
@@ -122,7 +122,7 @@ class BoardController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('boards.index');
+        return redirect()->route('boards.index')->with('flash_message', '更新が完了しました');
     }
 
     /**
@@ -136,7 +136,7 @@ class BoardController extends Controller
         $board = Board::find($id);
         $board->delete();
 
-        return redirect()->route('boards.index');
+        return redirect()->route('boards.index')->with('flash_message', '削除が完了しました');
     }
 
     public function bookmark($id)

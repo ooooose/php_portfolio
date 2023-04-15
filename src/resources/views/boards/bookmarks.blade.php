@@ -51,7 +51,9 @@
                             </div>
                         @endforeach
                         </div>
-                        {{ $boards->links() }}
+                        <div class='mt-2'>
+                          {{ $boards->links() }}
+                        </div>
                    </div>
                 </div>
             </div>

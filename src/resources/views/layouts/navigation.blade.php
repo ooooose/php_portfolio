@@ -13,7 +13,7 @@
             <div class="mx-auto">
                 @if (session('flash_message'))
                     <div class="my-2 mt-2">
-                        <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded" role="alert">
+                        <div class="bg-blue-100 border text-sm border-blue-400 text-blue-700 px-4 py-3 rounded" role="alert">
                             <div class='alert alert-success'>
                                 <span class="block sm:inline">{{ session('flash_message') }}</span>
                             </div>
@@ -76,18 +76,6 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('boards.index')" :active="request()->routeIs('boards.index')">
-                {{ __('作品一覧') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
-                {{ __('マイページ') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('boards.bookmarks')" :active="request()->routeIs('boards.bookmarks')">
-                {{ __('お気に入り一覧') }}
-            </x-responsive-nav-link>
-        </div>
-
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
@@ -97,6 +85,15 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
+                <x-responsive-nav-link :href="route('boards.index')" :active="request()->routeIs('boards.index')">
+                    {{ __('作品一覧') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                    {{ __('マイページ') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('boards.bookmarks')" :active="request()->routeIs('boards.bookmarks')">
+                    {{ __('お気に入り一覧') }}
+                </x-responsive-nav-link>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 

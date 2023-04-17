@@ -23,7 +23,7 @@ https://workshub.herokuapp.com/
  - お気に入り機能
 
 ## ■画面遷移図
-後日添付予定
+[![Image from Gyazo](https://i.gyazo.com/3dd0aaece033fbf1094b2523d060d914.png)](https://gyazo.com/3dd0aaece033fbf1094b2523d060d914)
 
 ## ■ER図
-[![Image from Gyazo](https://i.gyazo.com/5466048034bf40eb5190320504d02174.png)](https://gyazo.com/5466048034bf40eb5190320504d02174)
+[![Image from Gyazo](https://i.gyazo.com/fa83fcc24f72acc20eaeb43535dedab7.png)](https://gyazo.com/fa83fcc24f72acc20eaeb43535dedab7)

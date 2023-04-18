@@ -11017,13 +11017,12 @@ window.addEventListener('DOMContentLoaded', function () {
     var bookmarkBoardId;
     bookmark.on('click', function () {
       var $this = $(this);
-      var icon = $this.children('i');
       bookmarkBoardId = $this.data('board-id');
       $.ajax({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: "".concat(bookmarkBoardId, "/bookmark"),
+        url: "boards/".concat(bookmarkBoardId, "/bookmark"),
         method: "POST",
         data: {
           'board_id': bookmarkBoardId

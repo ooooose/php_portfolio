@@ -31,5 +31,6 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="{{ mix('js/bookmark.js') }}" type="module"></script>
     </body>
 </html>

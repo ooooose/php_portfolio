@@ -46,13 +46,13 @@
                                         <a href="{{ $board->url }}" class="text-indigo-500 inline-flex items-center md:mb-3 lg:mb-0" target="_blank">アプリURL</a>
                                         <div class="float-right flex items-center flex-wrap mt-3">
                                             @if($board->is_bookmarked_by_auth_user())
-                                                <a href="{{ route('boards.unbookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">
-                                                    <i class='fa-solid fa-star'></i>
-                                                </a>
+                                                <span class='bookmarks'>
+                                                    <i class='cursor-pointer fa-solid fa-star bookmark-toggle' data-board-id="{{ $board->id }}"></i>
+                                                </span>
                                             @else
-                                                <a href="{{ route('boards.bookmark', ['id' => $board->id]) }}" class="btn tbtn-success btn-sm">
-                                                    <i class='fa-regular fa-star'></i>
-                                                </a>
+                                                <span class='bookmarks'>
+                                                    <i class='cursor-pointer fa-solid fa-star bookmark-toggle bookmarked' data-board-id="{{ $board->id }}"></i>
+                                                </span>
                                             @endif
                                         </div>
                                     </div>

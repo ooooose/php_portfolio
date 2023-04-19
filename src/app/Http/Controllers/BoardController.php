@@ -139,20 +139,19 @@ class BoardController extends Controller
         return redirect()->route('boards.index')->with('flash_message', '削除が完了しました');
     }
 
-    public function bookmark($id)
+    public function bookmark(Request $request)
     {
-        Bookmark::create([
-            'board_id' => $id,
-            'user_id' => Auth::id(),
-        ]);
+        $user_id = Auth::user()->id;
+        $board_id = $request->board_id;
+        $already_bookmarked = Bookmark::where('user_id', $user_id)->where('board_id', $board_id)->first();
 
-        return redirect()->back();
-    }
-
-    public function unbookmark($id)
-    {
-        $bookmark = Bookmark::where('board_id', $id)->where('user_id', Auth::id())->first();
-        $bookmark->delete();
+        if (!$already_bookmarked) {
+            Bookmark::create([
+                'user_id' => $user_id,
+                'board_id' => $board_id]);
+        } else {
+                Bookmark::where('board_id', $board_id)->where('user_id', $user_id)->delete(); 
+        }
 
         return redirect()->back();
     }

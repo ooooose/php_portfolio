@@ -5,20 +5,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
         bookmark.on('click', function () {
             let $this = $(this);
-            let icon = $this.children('i');
             bookmarkBoardId = $this.data('board-id');
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
                 },
-                url: `${bookmarkBoardId}/bookmark`,
+                url: `boards/${bookmarkBoardId}/bookmark`,
                 method: "POST",
                 data: {
                     'board_id': bookmarkBoardId,
                 },
             })
             .done(function () {
-                $this.toggleClass('.bookmarked');
+                $this.toggleClass('bookmarked');
+            })
+            .fail(function() {
+                console.log('fail');
             })
         })
     })

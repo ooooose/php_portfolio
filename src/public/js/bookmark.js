@@ -11028,7 +11028,9 @@ window.addEventListener('DOMContentLoaded', function () {
           'board_id': bookmarkBoardId
         }
       }).done(function () {
-        $this.toggleClass('.bookmarked');
+        $this.toggleClass('bookmarked');
+      }).fail(function () {
+        console.log('fail');
       });
     });
   });

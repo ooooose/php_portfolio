@@ -94,7 +94,7 @@ class BoardController extends Controller
         if ($user->can('edit', $board)) {
             return view('boards.edit', ['board' => $board]);
         } else {
-            return redirect()->route('boards.index');
+            return redirect()->route('boards.index')->with('error_message', '編集権限がありません');
         }
     }
 

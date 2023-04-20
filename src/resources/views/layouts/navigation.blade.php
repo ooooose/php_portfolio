@@ -11,6 +11,16 @@
                 </div>
             </div>
             <div class="mx-auto">
+                @if (session('error_message'))
+                    <div class="my-2 mt-2">
+                        <div class="bg-red-100 border text-sm border-red-400 text-red-700 px-4 py-3 rounded" role="alert">
+                            <div class='alert alert-success'>
+                                <span class="block sm:inline">{{ session('error_message') }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 @if (session('flash_message'))
                     <div class="my-2 mt-2">
                         <div class="bg-blue-100 border text-sm border-blue-400 text-blue-700 px-4 py-3 rounded" role="alert">

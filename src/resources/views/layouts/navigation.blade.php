@@ -10,7 +10,7 @@
                     </a>
                 </div>
             </div>
-            <div class="mx-auto">
+            <div class="mx-auto message">
                 @if (session('error_message'))
                     <div class="my-2 mt-2">
                         <div class="bg-red-100 border text-sm border-red-400 text-red-700 px-4 py-3 rounded" role="alert">

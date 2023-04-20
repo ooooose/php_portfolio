@@ -88,9 +88,14 @@ class BoardController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
         $board = Board::find($id);
-
-        return view('boards.edit', ['board' => $board]);
+        
+        if ($user->can('edit', $board)) {
+            return view('boards.edit', ['board' => $board]);
+        } else {
+            return redirect()->route('boards.index');
+        }
     }
 
     /**

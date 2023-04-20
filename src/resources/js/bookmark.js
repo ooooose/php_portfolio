@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 headers: {
                     'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
                 },
-                url: `boards/${bookmarkBoardId}/bookmark`,
+                url: `/boards/${bookmarkBoardId}/bookmark`,
                 method: "POST",
                 data: {
                     'board_id': bookmarkBoardId,

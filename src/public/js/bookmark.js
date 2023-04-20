@@ -11022,7 +11022,7 @@ window.addEventListener('DOMContentLoaded', function () {
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: "boards/".concat(bookmarkBoardId, "/bookmark"),
+        url: "/boards/".concat(bookmarkBoardId, "/bookmark"),
         method: "POST",
         data: {
           'board_id': bookmarkBoardId

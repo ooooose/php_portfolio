@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            作品登録情報編集 
+            作品情報編集 
         </h2>
     </x-slot>
 
@@ -55,8 +55,11 @@
                                         <textarea id="description" name="description" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ $board->description }}</textarea>
                                     </div>
                                     </div>
-                                    <div class="p-2 w-full">
-                                    <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">更新する</button>
+                                    <div class="p-2 mx-auto flex">
+                                        <button class="inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                                            <a href="{{ route('boards.show', [ 'id' => $board->id ]) }}" class="text-white-500">詳細に戻る</a>
+                                        </button>
+                                        <button class="ml-2 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">更新する</button>
                                     </div>
                                 </div>
                                 </div>

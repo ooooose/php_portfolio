@@ -1,7 +1,7 @@
 ## ■サービス概要
-#### WorksHub
+### WorksHub
 [![Image from Gyazo](https://i.gyazo.com/bae343ca23e4e3413dea4b5b089d61b3.png)](https://gyazo.com/bae343ca23e4e3413dea4b5b089d61b3)
-#### ▼サービスURL
+### ▼サービスURL
 https://workshub.herokuapp.com/
 
 ## ■概要
@@ -15,8 +15,8 @@ https://workshub.herokuapp.com/
  - S3（画像アップロード先として選択）
  - Heroku
 
-## ■実装予定の機能
- - ユーザー登録・削除機能
+## ■実装機能
+ - ユーザー登録機能
  - ログイン・ログアウト機能（認証機能）
  - 作品のCRUD機能
  - 作品の検索機能
